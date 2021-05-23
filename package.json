@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "dev": "cross-env NODE_ENV=production nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "postinstall": "npm run build",
+    "build": "cross-env NODE_ENV=production webpack,",
+    "server:dev":"webpack-dev-server"
   },
   "keywords": [],
   "author": "",
